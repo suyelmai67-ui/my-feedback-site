@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiểu nhau hơn từ chút - Lời xin lỗi</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: system-ui, "Segoe UI", sans-serif;
+      }
+      body {
+        min-height: 100vh;
+        background: linear-gradient(145deg, #f2e8df 0%, #ffe6d5 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      .card {
+        max-width: 680px;
+        width: 100%;
+        background: #fffef9;
+        border-radius: 48px;
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      .header {
+        background: #5e2e1c;
+        padding: 32px 28px;
+        text-align: center;
+      }
+      .header h1 {
+        color: #fff2e6;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+      .header p {
+        color: #ffddd0;
+        margin-top: 10px;
+      }
+      .content {
+        padding: 40px 32px 44px;
+      }
+      .apology-text {
+        background: #fef1e4;
+        padding: 28px 24px;
+        border-radius: 32px;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: #3e2a21;
+        margin-bottom: 32px;
+      }
+      .next-btn {
+        background: #5e2e1c;
+        color: white;
+        width: 100%;
+        padding: 14px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 60px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .next-btn:hover {
+        background: #7b422a;
+      }
+      .feedback-section {
+        display: none;
+      }
+      .question {
+        background: #fef1e4;
+        padding: 20px 16px;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #3e2a21;
+        margin-bottom: 32px;
+      }
+      textarea {
+        width: 100%;
+        border: 2px solid #f0cfb5;
+        border-radius: 28px;
+        padding: 18px 22px;
+        font-size: 1rem;
+        background: #fffcf8;
+        resize: vertical;
+        font-family: inherit;
+      }
+      textarea:focus {
+        outline: none;
+        border-color: #b47c48;
+      }
+      button[type="submit"] {
+        background: #5e2e1c;
+        color: white;
+        width: 100%;
+        padding: 16px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 60px;
+        cursor: pointer;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .status {
+        margin-top: 24px;
+        text-align: center;
+        padding: 12px;
+        border-radius: 40px;
+        background: #f6ede5;
+        color: #3b2c23;
+        font-size: 0.9rem;
+      }
+      .footer {
+        background: #fcf5ed;
+        padding: 18px;
+        text-align: center;
+        font-size: 0.75rem;
+        color: #b28b6f;
+        border-top: 1px solid #f1e0d2;
+      }
+      @media (max-width: 550px) {
+        .content {
+          padding: 24px 20px 32px;
+        }
+        .question {
+          font-size: 1.2rem;
+        }
+        .apology-text {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="header">
+        <h1>🌸 Hiểu nhau hơn từ chút</h1>
+        <p>Mình muốn lắng nghe để trở nên tốt hơn</p>
+      </div>
+      <div class="content">
+        <div id="apologySection">
+          <div class="apology-text">
+            Ý ơi,<br /><br />
+            Tui biết là bản thân có thể đã làm b buồn nhiều lắm nhma á thật sự
+            là trong lòng tui ko có muốn làm Ý buồn chút nào cả, vì vậy á tui
+            mông là b có thể chia sẽ với tui đc chứ, thề là tui sẽ thay đổi để
+            hoàn thiện hơn, chứ tui ko muốn b buồn đâu, b có thể nói thật với
+            tui đc chứ, tui sẽ lắng nghe và sửa sai, chứ tui ko muốn b buồn đâu.
+          </div>
+          <button id="nextBtn" class="next-btn">📖 Next</button>
+        </div>
+        <div id="feedbackSection" class="feedback-section">
+          <div class="question">
+            💌 "Ý ơi,Điều gì mà mình đã khiến bạn buồn?"
+          </div>
+          <form id="feedbackForm">
+            <textarea
+              id="message"
+              rows="6"
+              placeholder="Hãy viết ra đây, mình xin lỗi và sẽ sửa ❤️"
+            ></textarea>
+            <div class="note">
+              📎 Mọi điều bạn viết sẽ được gửi riêng tới mình – mình đọc và trân
+              trọng từng lời góp ý.
+            </div>
+            <button type="submit">✉️ Gửi lời nhắn</button>
+            <div id="status" class="status">Cảm ơn bạn đã dành thời gian.</div>
+          </form>
+        </div>
+      </div>
+      <div class="footer">
+        🌱 Mình thực sự muốn thay đổi – xin hãy giúp mình bằng cách nói thật.
+      </div>
+    </div>
+    <script>
+      // ========== CẤU HÌNH EMAIL ==========
+      const YOUR_EMAIL = "suyelmai67@gmail.com"; // 👈 Email nhận phản hồi
+      // ====================================
+
+      // Chuyển màn hình
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        document.getElementById("apologySection").style.display = "none";
+        document.getElementById("feedbackSection").style.display = "block";
+      });
+
+      const form = document.getElementById("feedbackForm");
+      const textarea = document.getElementById("message");
+      const statusDiv = document.getElementById("status");
+
+      async function sendToEmail(message) {
+        const formSubmitUrl = "https://formsubmit.co/ajax/" + YOUR_EMAIL;
+        const payload = {
+          title: "💔 Lời góp ý từ trang web xin lỗi",
+          message: message,
+          _captcha: "false",
+        };
+        const response = await fetch(formSubmitUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        if (!response.ok)
+          throw new Error(`Gửi mail thất bại (mã ${response.status})`);
+        return true;
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const msg = textarea.value.trim();
+        if (!msg) {
+          statusDiv.innerHTML = "⚠️ Hãy viết điều bạn muốn nói trước khi gửi.";
+          statusDiv.style.background = "#ffe1cf";
+          return;
+        }
+        const btn = form.querySelector("button");
+        const original = btn.innerHTML;
+        btn.innerHTML = "⏳ Đang gửi...";
+        btn.disabled = true;
+        statusDiv.innerHTML = "🕊️ Đang xử lý...";
+        statusDiv.style.background = "#f6ede5";
+
+        try {
+          await sendToEmail(msg);
+          statusDiv.innerHTML = "✅ Đã ghi nhận! Cảm ơn bạn rất nhiều ❤️";
+          statusDiv.style.background = "#e0f2e9";
+          textarea.value = "";
+        } catch (err) {
+          console.error(err);
+          statusDiv.innerHTML = `❌ Lỗi: ${err.message}. Thử lại hoặc liên hệ mình nhé.`;
+          statusDiv.style.background = "#ffe1cf";
+        } finally {
+          btn.innerHTML = original;
+          btn.disabled = false;
+          setTimeout(() => {
+            if (statusDiv.innerHTML.includes("ghi nhận")) {
+              statusDiv.innerHTML = "💬 Cảm ơn bạn đã dành thời gian.";
+              statusDiv.style.background = "#f6ede5";
+            }
+          }, 5000);
+        }
+      });
+    </script>
+  </body>
+</html>
